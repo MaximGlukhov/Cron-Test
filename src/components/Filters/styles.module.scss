@@ -1,0 +1,52 @@
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+    padding-right: 100px;
+}
+
+.romb {
+    margin-top: 25px;
+    width: 65px;
+    height: 65px;
+    border: 4px solid #fff;
+    border-radius: 5px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    opacity: 0;
+
+    .filtersActive & {
+        width: 92%;
+        height: max-content;
+        opacity: 1;
+    }
+}
+
+.column {
+    width: 25%;
+}
+
+.columnTitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.columnContainer {
+    padding-top: 31px;
+    border-top: 2px solid #fff;
+}
+
+.btn {
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}

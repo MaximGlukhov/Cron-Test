@@ -1,0 +1,43 @@
+.filtersBtn {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    cursor: pointer;
+    font-size: 48px;
+
+    .filtersBtnActive & {
+        color: #fb6542;
+    }
+}
+
+.romb {
+    width: 25px;
+    height: 25px;
+    border: 3px solid #fff;
+    border-radius: 3px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-right: 32px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    background-color: #fff;
+
+    .filtersBtnActive & {
+        background-color: transparent;
+    }
+}
+
+.animLine {
+    width: 80px;
+    margin-right: 32px;
+    height: 1px;
+    background: #fff;
+    transition: all 0.2s linear;
+
+    .filtersBtnActive & {
+        width: 0;
+        margin-right: 0;
+    }
+}

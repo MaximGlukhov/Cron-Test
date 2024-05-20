@@ -1,0 +1,28 @@
+.cases {
+    column-count: 2;
+    column-gap: 48px;
+    margin-top: 130px;
+    padding: 0 100px;
+
+    @media (max-width: 1470px) {
+        padding: 0;
+    }
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 120px;
+    font-size: 40px;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 120px;
+    font-size: 40px;
+}
