@@ -27,6 +27,11 @@
     .filtersBtnActive & {
         background-color: transparent;
     }
+
+    &.rombFilter {
+        border: 3px solid #fb6542;
+        background-color: #fff;
+    }
 }
 
 .animLine {
@@ -39,5 +44,32 @@
     .filtersBtnActive & {
         width: 0;
         margin-right: 0;
+    }
+}
+
+.cleanBtn {
+    font-size: 24px;
+    color: #fb6542;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+    animation: anim 0.3s;
+}
+
+.cleanLine {
+    height: 0;
+    width: 35px;
+    border: 1px solid #fb6542;
+    margin-right: 20px;
+    animation: anim 0.3s;
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

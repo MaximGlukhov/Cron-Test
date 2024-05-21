@@ -28,10 +28,20 @@ export const $casesGetStatus = combine({
     data: $dataStore,
 });
 
-export const $filteredCase = createStore("");
+export const $filteredCase = createStore<string[]>([]);
 
-export const { getFilter } = createApi($filteredCase, {
-    getFilter: (state, payload) => {
-        state = payload;
+export const { getFilter, cleanFilter } = createApi($filteredCase, {
+    getFilter: (state: any, payload: any) => {
+        if (state.includes(payload)) {
+            const index = state.findIndex((elem: any) => elem === payload);
+            state.splice(index, 1);
+        } else {
+            state.push(payload);
+        }
+        return [...state];
+    },
+    cleanFilter: (state) => {
+        state.splice(0, state.length);
+        return [...state];
     },
 });

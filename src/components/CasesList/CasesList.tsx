@@ -20,17 +20,22 @@ export default function CasesList() {
         return <div className={classes.error}>Что то пошло не так, попробуйте перезагрузить страницу</div>;
     }
 
+    const getFilteredCases = () => {
+        return data
+            .filter((obj) => {
+                return obj.Filters.some((subObj) => {
+                    const index = filtered.findIndex((elem: any) => elem === subObj.Name);
+                    return subObj.Name === filtered[index];
+                });
+            })
+            .map((item: ICase) => <CaseCard card={item} key={item.Id} />);
+    };
+
     return (
         <div className={classes.cases}>
-            {data
-                // .filter((obj) => {
-                //     return obj.Filters.some((subObj) => {
-                //         return subObj.Name === filtered;
-                //     });
-                // })
-                .map((item: ICase) => (
-                    <CaseCard card={item} key={item.Id} />
-                ))}
+            {filtered.length > 0
+                ? getFilteredCases()
+                : data.map((item: ICase) => <CaseCard card={item} key={item.Id} />)}
         </div>
     );
 }
