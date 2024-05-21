@@ -7,6 +7,11 @@
     @media (max-width: 1470px) {
         padding: 0;
     }
+
+    @media(max-width: 768px) {
+        column-count: 1;
+        margin-top: 50px;
+    }
 }
 
 .loading {
